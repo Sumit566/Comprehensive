@@ -1,0 +1,91 @@
+package com.Doctor.Entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Doctor")
+public class Doctor {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="Doctor_ID")
+	private int DID;
+	@Column(name="Doctor_Name")
+	private String Dname;
+	@Column(name="Doctor_Gender")
+	private String Gender;
+	@Column(name="Doctor_Age")
+	private int age;
+	@Column(name="Doctor_Speciality")
+	private String SpecialistField;
+	@Column(name="Patient_Attended")
+	private int patientAttended;
+	
+	
+
+	public int getPatientAttended() {
+		return patientAttended;
+	}
+
+	public void setPatientAttended(int patientAttended) {
+		this.patientAttended = patientAttended;
+	}
+
+	public Doctor(int dID, String dname, String gender, int age, String specialistField, int patientAttended) {
+		super();
+		DID = dID;
+		Dname = dname;
+		Gender = gender;
+		this.age = age;
+		SpecialistField = specialistField;
+		this.patientAttended = patientAttended;
+	}
+
+	public Doctor() {
+		super();
+	}
+
+	public int getDID() {
+		return DID;
+	}
+
+	public void setDID(int dID) {
+		DID = dID;
+	}
+
+	public String getDname() {
+		return Dname;
+	}
+
+	public void setDname(String dname) {
+		Dname = dname;
+	}
+
+	public String getGender() {
+		return Gender;
+	}
+
+	public void setGender(String gender) {
+		Gender = gender;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getSpecialistField() {
+		return SpecialistField;
+	}
+
+	public void setSpecialistField(String specialistField) {
+		SpecialistField = specialistField;
+	}
+}

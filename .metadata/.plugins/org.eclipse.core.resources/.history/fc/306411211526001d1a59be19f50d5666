@@ -1,0 +1,5 @@
+package com.Patient.VO;
+
+public class ResponseTemplateVO {
+
+}

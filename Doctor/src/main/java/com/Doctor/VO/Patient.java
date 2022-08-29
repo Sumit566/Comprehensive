@@ -1,0 +1,66 @@
+package com.Doctor.VO;
+
+
+public class Patient {
+	private int PID;
+	private String PName;
+	private String visitedDoctor;
+	private String dateOfVisit;
+	private String prescription;
+	private int RID;
+	
+	public Patient(int pID, String pName, String visitedDoctor, String dateOfVisit, String prescription, int rID) {
+		super();
+		PID = pID;
+		PName = pName;
+		this.visitedDoctor = visitedDoctor;
+		this.dateOfVisit = dateOfVisit;
+		this.prescription = prescription;
+		RID = rID;
+	}
+	
+	public int getRID() {
+		return RID;
+	}
+
+	public void setRID(int rID) {
+		RID = rID;
+	}
+
+	public Patient() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public int getPID() {
+		return PID;
+	}
+	public void setPID(int pID) {
+		PID = pID;
+	}
+	public String getPName() {
+		return PName;
+	}
+	public void setPName(String pName) {
+		PName = pName;
+	}
+	public String getVisitedDoctor() {
+		return visitedDoctor;
+	}
+	public void setVisitedDoctor(String visitedDoctor) {
+		this.visitedDoctor = visitedDoctor;
+	}
+	public String getDateOfVisit() {
+		return dateOfVisit;
+	}
+	public void setDateOfVisit(String dateOfVisit) {
+		this.dateOfVisit = dateOfVisit;
+	}
+	public String getPrescription() {
+		return prescription;
+	}
+	public void setPrescription(String prescription) {
+		this.prescription = prescription;
+	}
+	
+	
+}

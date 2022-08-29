@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="DoctorApplicationTests" project="Doctor" tests="4" started="4" failures="0" errors="0" ignored="0">
+  <testsuite name="com.Doctor.DoctorApplicationTests" time="0.079" displayname="DoctorApplicationTests" uniqueid="[engine:junit-jupiter]/[class:com.Doctor.DoctorApplicationTests]">
+    <testcase name="testgetDoctor" classname="com.Doctor.DoctorApplicationTests" time="0.059" displayname="testgetDoctor()" uniqueid="[engine:junit-jupiter]/[class:com.Doctor.DoctorApplicationTests]/[method:testgetDoctor()]"/>
+    <testcase name="testaDDDoctor" classname="com.Doctor.DoctorApplicationTests" time="0.006" displayname="testaDDDoctor()" uniqueid="[engine:junit-jupiter]/[class:com.Doctor.DoctorApplicationTests]/[method:testaDDDoctor()]"/>
+    <testcase name="testgetDoctors" classname="com.Doctor.DoctorApplicationTests" time="0.005" displayname="testgetDoctors()" uniqueid="[engine:junit-jupiter]/[class:com.Doctor.DoctorApplicationTests]/[method:testgetDoctors()]"/>
+    <testcase name="testupdateDoctorAttendedList" classname="com.Doctor.DoctorApplicationTests" time="0.005" displayname="testupdateDoctorAttendedList()" uniqueid="[engine:junit-jupiter]/[class:com.Doctor.DoctorApplicationTests]/[method:testupdateDoctorAttendedList()]"/>
+  </testsuite>
+</testrun>

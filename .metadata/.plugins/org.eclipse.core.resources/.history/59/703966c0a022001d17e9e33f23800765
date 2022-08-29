@@ -1,0 +1,22 @@
+package com.Doctor.ServiceImpl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Doctor.Entity.Doctor;
+import com.Doctor.Repository.DoctorRepository;
+import com.Doctor.ServiceInterface.DoctorServiceInterface;
+
+@Service
+public class DoctorServiceImpl  implements DoctorServiceInterface{
+	@Autowired
+	private DoctorRepository DoctorDao;
+
+	@Override
+	public List<Doctor> getAllDoctorList() {
+		return this.DoctorDao.findAll();
+	}
+
+}

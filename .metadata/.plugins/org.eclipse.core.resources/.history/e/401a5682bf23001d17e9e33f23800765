@@ -1,0 +1,62 @@
+package com.Doctor.ServiceImpl;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.Doctor.Entity.Doctor;
+import com.Doctor.Repository.DoctorRepository;
+import com.Doctor.ServiceInterface.DoctorServiceInterface;
+import com.Doctor.VO.Patient;
+import com.Doctor.VO.ResponseTemplateVO;
+
+@Service
+public class DoctorServiceImpl  implements DoctorServiceInterface{
+	@Autowired
+	private DoctorRepository DoctorDao;
+	
+	@Autowired
+	private RestTemplate resttemplate;
+
+	@Override
+	public List<Doctor> getAllDoctorList() {
+		
+		return this.DoctorDao.findAll();
+	}
+
+	@Override
+	public Doctor addDoctor(Doctor doc) {
+		return this.DoctorDao.save(doc);
+	}
+
+	@Override
+	public Doctor getDoctorById(int DID) {
+		return this.DoctorDao.findById(DID).get();
+	}
+
+	@Override
+	public ResponseTemplateVO getAllPatientByDoctor(int DID) {
+		Doctor d=this.DoctorDao.findById(DID).get();
+		ResponseEntity<Patient[]> patients=resttemplate.getForEntity("http://Patient-Service/Patient", Patient[].class);
+		Patient[] p=patients.getBody();
+		List<Patient> g=new ArrayList<>();
+		for(Patient i:p) {
+			if(i.getVisitedDoctor().equalsIgnoreCase(d.getDname())) {
+				g.add(i);
+			}
+		}
+		d.setPatientAttended(g.size());
+		this.DoctorDao.save(d);
+		ResponseTemplateVO v=new ResponseTemplateVO();
+		v.setDoctor(d);
+		v.setPatient(g);
+		return v;
+	}
+	
+
+}

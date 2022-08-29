@@ -1,0 +1,9 @@
+package com.Doctor.ServiceInterface;
+
+import java.util.List;
+
+import com.Doctor.Entity.Doctor;
+
+public interface DoctorServiceInterface {
+	public List<Doctor> getAllDoctorList();
+}

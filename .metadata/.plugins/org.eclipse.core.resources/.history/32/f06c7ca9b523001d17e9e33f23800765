@@ -1,0 +1,40 @@
+package com.Patient.ServiceImpl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.Patient.Entity.Patient;
+import com.Patient.Repository.PatientRepository;
+import com.Patient.ServiceInterface.PatientServiceInterface;
+@Service
+public class PatientServiceImpl implements PatientServiceInterface{
+	@Autowired
+	private PatientRepository PatientDao;
+
+	@Override
+	public List<Patient> getAllPatient() {
+		return this.PatientDao.findAll();
+	}
+
+	@Override
+	public List<Patient> getPatientByID(int PID) {
+		List<Patient> p=this.PatientDao.findAll();
+		List<Patient> temp=new ArrayList<>();
+		for(Patient i:p) {
+			if(i.getPID()==PID && i.getPrescription()!=null) {
+				temp.add(i);
+			}
+		}
+		return temp;
+	}
+
+	@Override
+	public Patient addPatient(Patient pet) {
+		
+		return this.PatientDao.save(pet);
+	}
+
+}

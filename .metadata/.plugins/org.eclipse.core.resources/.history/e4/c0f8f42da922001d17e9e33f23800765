@@ -1,0 +1,5 @@
+package com.Patient.Entity;
+
+public class Patient {
+
+}

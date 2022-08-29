@@ -1,0 +1,5 @@
+package com.Patient.ServiceImpl;
+
+public class PatientServiceImpl {
+
+}
